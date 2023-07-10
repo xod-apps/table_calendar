@@ -4,6 +4,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class TodayButton extends StatelessWidget {
   final String text;
@@ -11,6 +12,7 @@ class TodayButton extends StatelessWidget {
   final TextStyle textStyle;
   final BoxDecoration decoration;
   final EdgeInsets padding;
+  final CalendarFormat calendarFormat;
 
   const TodayButton({
     Key? key,
@@ -19,6 +21,7 @@ class TodayButton extends StatelessWidget {
     required this.decoration,
     required this.padding,
     required this.text,
+    required this.calendarFormat,
   }) : super(key: key);
 
   @override

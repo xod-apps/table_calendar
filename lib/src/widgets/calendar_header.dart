@@ -87,6 +87,7 @@ class CalendarHeader extends StatelessWidget {
                   child: TodayButton(
                     onTap: onTodayButtonTap ?? () {},
                     text: headerStyle.todayButtonText,
+                    calendarFormat: calendarFormat,
                     decoration: headerStyle.formatButtonDecoration,
                     padding: headerStyle.formatButtonPadding,
                     textStyle: headerStyle.formatButtonTextStyle,

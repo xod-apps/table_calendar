@@ -454,12 +454,24 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
   }
 
   void _onTodayButtonTap() {
-    _jumpToPage(_pageController.page!.toInt() + differenceInMounth);
+    if (widget.calendarFormat == CalendarFormat.month) {
+      _jumpToPage(_pageController.page!.toInt() + differenceInMounth);
+    } else if (widget.calendarFormat == CalendarFormat.week) {
+      _jumpToPage(_pageController.page!.toInt() + differenceInWeek);
+    }
 
     widget.onDaySelected?.call(_currentDay, _focusedDay.value);
   }
 
   int get differenceInMounth => _currentDay.month - _focusedDay.value.month;
+
+  int get differenceInWeek =>
+      _currentDay.difference(_focusedDay.value).inDays ~/ 7 +
+      (_currentDay.isAfter(_focusedDay.value)
+          ? 1
+          : 0) /* *
+      (_currentDay.isAfter(_focusedDay.value) ? -1 ) */
+      ;
 
   DateTime get _currentDay => DateTime.now();
 
