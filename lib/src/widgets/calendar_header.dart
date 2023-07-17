@@ -81,18 +81,6 @@ class CalendarHeader extends StatelessWidget {
                       ),
                     ),
               ),
-              if (headerStyle.todayButtonVisible)
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: TodayButton(
-                    onTap: onTodayButtonTap ?? () {},
-                    text: headerStyle.todayButtonText,
-                    calendarFormat: calendarFormat,
-                    decoration: headerStyle.formatButtonDecoration,
-                    padding: headerStyle.formatButtonPadding,
-                    textStyle: headerStyle.formatButtonTextStyle,
-                  ),
-                ),
               if (headerStyle.formatButtonVisible &&
                   availableCalendarFormats.length > 1)
                 Padding(
