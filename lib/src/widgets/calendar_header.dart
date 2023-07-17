@@ -108,6 +108,8 @@ class CalendarHeader extends StatelessWidget {
             Container(
               margin: headerStyle.rightChevronMargin,
               child: InkWell(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: onTodayButtonTap,
                 child: Text(
                   headerStyle.todayButtonText,
